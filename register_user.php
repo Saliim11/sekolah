@@ -1,0 +1,32 @@
+<?php
+	include "connect.php";
+	$con = mysqli_connect (HOST, USER, PASSWORD, DATABASE);
+	$response = array();
+
+	$nama_user = $_POST ["nama_user"];
+	$vsusername = $_POST ["vsusername"];
+	$vspassword = md5($_POST ["vspassword"]);
+
+	$sql = "INSERT INTO users(id_user, nama_user, vsusername, vspassword) 
+	VALUES(UUID(), '$nama_user', '$vsusername', '$vspassword')";
+
+	$result = mysqli_query($con, $sql);
+
+	if ($result) 
+	{
+		$resp["status"] = "1";
+		$resp["message"] = "sukses";
+		$resp["nama_user"] = $nama_user;
+		$resp["vsusername"] = $vsusername;
+		$resp["vspassword"] = $vspassword;
+		
+	}else
+	{
+		$resp["status"] = "0";
+		$resp["message"] = "gagal";
+	}
+	$response = $resp;
+	echo json_encode ($response);
+
+	mysqli_close ($con);
+?>
