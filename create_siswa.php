@@ -1,8 +1,10 @@
 <?php
+	//menghubungkan database
 	include "connect.php";
 	$con = mysqli_connect (HOST, USER, PASSWORD, DATABASE);
 	$response = array();
-
+	
+	//mengambil data dari form
 	$nama_siswa = $_POST ["nama_siswa"];
 	$kelas = $_POST ["kelas"];
 
