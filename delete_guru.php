@@ -1,9 +1,12 @@
 <?php
+// menghubungkan ke database
 include "connect.php";
 $con = mysqli_connect (HOST, USER, PASSWORD, DATABASE);
 
+// mengambil data id guru
 $id = $_GET ['id_guru'];
 
+// query hapus data guru
 $sql = "DELETE from tb_guru WHERE id_guru = '$id'";
 
 $result = mysqli_query($con,$sql);
