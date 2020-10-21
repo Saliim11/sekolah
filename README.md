@@ -1,2 +1,2 @@
 # sekolah
-ini adalah web CRUD sekolah
+ini adalah web untuk CRUD data sekolah
