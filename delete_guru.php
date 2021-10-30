@@ -13,6 +13,7 @@ $result = mysqli_query($con,$sql);
 
 $response = array();
 
+//if else condition
 if($result) {
 	$resp["status"] = 1;
 	$resp["message"] = "hapus sukses";
