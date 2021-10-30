@@ -6,8 +6,9 @@
 	
 	$username = $_POST['vsusername'];
 	$password = md5($_POST['vspassword']);
-	
+	//variables
 	$sql = "SELECT * FROM users WHERE vsusername = '$username' and vspassword = '$password'";
+	//query
 	
 	$result = mysqli_query($con, $sql);
 	
@@ -17,7 +18,7 @@
 	}
 	
 	$row = mysqli_fetch_row($result);
-	
+	//row
 	$result_data = array(
 		'id_user' => $row[0],
 		'nama_user' => $row[1],
@@ -33,6 +34,7 @@
 		$response['result'] = "0";
 		$response['message'] = "Gagal Login";
 		}
+	//if else condition
 	echo json_encode($response);
 
 ?>
