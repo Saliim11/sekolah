@@ -2,7 +2,7 @@
 	include "connect.php";
 	$con = mysqli_connect (HOST, USER, PASSWORD, DATABASE);
 	$response = array();
-
+//variables
 	$nama_guru = $_POST ["nama_guru"];
 	$kelas = $_POST ["kelas"];
 
@@ -11,6 +11,7 @@
 
 	$result = mysqli_query($con, $sql);
 
+// else if condition
 	if ($result) 
 	{
 		$resp["status"] = "1";
